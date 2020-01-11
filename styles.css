@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+    font-weight: bold;
+}
+
+.success {
+    color: rgb(0,0,255);
+}
+
+.errors {
+    color: rgb(255,0,0);
+}
+
+.value {
+    color: #000;
+}
+
+
