@@ -8,7 +8,7 @@ function callAPI() {
     .done(function(result) {
     // it is expected that a JSON object is returned via the API, so guard against not receiving that
     if (typeof result !== 'object') {
-      $('.errors').append('<li>Unexpected data format return from API</li>')
+      $('.errors').append('<p>Unexpected data format return from API</p>')
       return
     }
     // Object.keys provides only OWN properties of an object, so no need to check
@@ -17,7 +17,9 @@ function callAPI() {
     for (var i = 0; i < keys.length; i++) {
       var value = result[keys[i]]
       // some data values may be missing or null, so substitute a more user-friendly value
-      if (value === '' || value === null || value === undefined) value = 'Data missing!'
+      if (value === '' || value === null || value === undefined) {
+        value = 'Data missing!'
+      }
       $('.success').append('<li>' + keys[i] + ': ' + '<span class="value">' + value + '</span>' + '</li>')
     }
   })
