@@ -18,13 +18,13 @@ function callAPI() {
       var value = result[keys[i]]
       // some data values may be missing or null, so substitute a more user-friendly value
       if (value === '' || value === null || value === undefined) {
-        value = 'Data missing!'
+        value = 'No data found'
       }
       $('.success').append('<li>' + keys[i] + ': ' + '<span class="value">' + value + '</span>' + '</li>')
     }
   })
     .fail(function() {
-      $('.errors').append('<p>No data found</p>')
+      $('.errors').append('<p>The Unipart API is down, or there is some other technical problem!</p>')
     })
 }
 
